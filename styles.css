@@ -90,7 +90,7 @@ img {
 .hero__media img {
   display: block;
   width: 100%;
-  aspect-ratio: 941 / 1672;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
   box-shadow: var(--shadow);
