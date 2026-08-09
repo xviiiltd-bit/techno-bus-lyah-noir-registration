@@ -88,10 +88,11 @@ img {
 }
 
 .hero__media img {
+  display: block;
   width: 100%;
   aspect-ratio: 941 / 1672;
-  object-fit: contain;
-  background: #05080b;
+  object-fit: cover;
+  object-position: center;
   box-shadow: var(--shadow);
   filter: contrast(1.04) saturate(1.08);
 }
