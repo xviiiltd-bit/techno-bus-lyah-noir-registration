@@ -16,21 +16,21 @@ window.EVENT_CONFIG = {
   },
   event: {
     title: {
-      zh: "TARGET: TECHNO BUS — LYAH NOIR",
-      en: "TARGET: TECHNO BUS — LYAH NOIR",
+      zh: "TARGET: LYAH NOIR",
+      en: "TARGET: LYAH NOIR",
     },
-    eyebrow: "BERLIN → TAIWAN / TECHNO BUS TW",
+    eyebrow: "TECHNO BUS ｜VG , JOJI",
     nameForSheet: "2026/08/28 TARGET: TECHNO BUS — LYAH NOIR",
     eventId: "techno-bus-20260828",
     taskId: "registration",
     sourcePage: "publish/techno-bus-20260828/index.html",
-    pageTitle: "TARGET: TECHNO BUS — LYAH NOIR | Registration",
+    pageTitle: "TARGET: LYAH NOIR | TECHNO BUS",
     description: "2026/08/28 Techno Bus with Lyah Noir 錄影表演活動報名頁",
     poster: {
       src: "assets/techno-bus-lyah-noir-20260828.png",
       alt: {
-        zh: "TARGET: TECHNO BUS — LYAH NOIR 活動主視覺",
-        en: "TARGET: TECHNO BUS — LYAH NOIR event poster",
+        zh: "TARGET: LYAH NOIR 活動主視覺",
+        en: "TARGET: LYAH NOIR event poster",
       },
     },
     lead: {
