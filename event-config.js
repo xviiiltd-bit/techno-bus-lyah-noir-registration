@@ -76,6 +76,7 @@ window.EVENT_CONFIG = {
   ],
   partners: [
     { name: "Techno Bus TW", logo: "assets/techno-bus-logo.png" },
+    { name: "NextStop Studio", logo: "assets/next-stop-logo.jpg" },
   ],
   bank: {
     name: "中國信託商業銀行 / CTBC BANK",
