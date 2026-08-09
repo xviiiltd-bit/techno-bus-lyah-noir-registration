@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TARGET: TECHNO BUS — LYAH NOIR | Registration</title>
+    <meta
+      name="description"
+      content="2026/08/28 Techno Bus with Lyah Noir 錄影表演活動報名頁"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260828-1" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="event-title">
+        <div class="hero__media">
+          <img
+            src="assets/techno-bus-lyah-noir-20260828.png"
+            alt="TARGET: TECHNO BUS — LYAH NOIR 活動主視覺"
+            data-config-src="event.poster.src"
+            data-config-text-attr="alt:event.poster.alt"
+          />
+        </div>
+
+        <div class="hero__content">
+          <div class="language-switch" aria-label="Language switch">
+            <button type="button" class="language-switch__button is-active" data-lang="zh">中文</button>
+            <button type="button" class="language-switch__button" data-lang="en">EN</button>
+          </div>
+          <p class="eyebrow" data-config-text="event.eyebrow">BERLIN → TAIWAN / TECHNO BUS TW</p>
+          <h1 id="event-title" data-config-text="event.title">TARGET: TECHNO BUS — LYAH NOIR</h1>
+          <p class="hero__lead" data-config-text="event.lead">
+            這是一場錄影形式的表演活動，參加僅限報名制。
+          </p>
+
+          <div class="quick-facts" aria-label="活動重點">
+            <div>
+              <span data-config-text="event.date.label">DATE</span>
+              <strong data-config-text="event.date.display">08.28.2026 FRI</strong>
+            </div>
+            <div>
+              <span data-config-text="event.time.label">TIME</span>
+              <strong data-config-text="event.time.display">22:00-02:00</strong>
+            </div>
+            <div>
+              <span data-config-text="event.price.label">PRICE</span>
+              <strong data-config-text="event.price.display">$400</strong>
+            </div>
+            <div>
+              <span data-config-text="event.location.label">Location</span>
+              <strong><span data-config-text="event.location.title">台北大客車停車場</span><br><span class="location-note" data-config-text="event.location.note">（付款完成會給地標）</span></strong>
+            </div>
+          </div>
+
+          <section class="follow-panel" aria-label="追蹤按鈕" data-config-list="followLinks"></section>
+
+          <a class="hero__cta" href="#register" data-i18n="cta">立即報名</a>
+        </div>
+      </section>
+
+      <section class="content-grid" aria-label="活動資訊與報名表單">
+        <div class="event-panel">
+          <div class="section-heading">
+            <h2>LINEUP</h2>
+          </div>
+
+          <ol class="lineup-list" data-config-list="lineup"></ol>
+
+        </div>
+
+        <section class="register-panel" id="register" aria-labelledby="form-title">
+          <div class="section-heading">
+            <p>REGISTER</p>
+            <h2 id="form-title" data-i18n="formTitle">活動報名資訊</h2>
+          </div>
+
+          <form
+            id="registration-form"
+            class="registration-form"
+            data-event-id="techno-bus-20260828"
+            data-task-id="registration"
+            data-source-page="publish/techno-bus-20260828/index.html"
+          >
+            <label>
+              <span data-i18n="nameLabel">姓名</span>
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
+
+            <label>
+              <span data-i18n="phoneLabel">電話</span>
+              <input
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                required
+              />
+            </label>
+
+            <label>
+              <span data-i18n="emailLabel">Email</span>
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+
+            <label>
+              <span data-i18n="birthdayLabel">生日</span>
+              <input name="birthday" type="date" required />
+            </label>
+
+            <label>
+              <span data-i18n="instagramLabel">Instagram 帳號</span>
+              <input
+                name="instagram"
+                type="text"
+                placeholder="@username"
+                autocomplete="off"
+                required
+              />
+            </label>
+
+            <label class="agreement-field">
+              <input name="agreement" type="checkbox" required />
+              <span data-i18n="agreementLabel">我已閱讀並同意 NOTICE 免責聲明與注意事項。</span>
+            </label>
+
+            <button class="submit-button" type="submit" data-i18n="paymentButton">
+              付款
+            </button>
+            <p class="registration-payment-note" data-i18n="paymentNote">
+              填寫報名資料後點擊付款，系統會顯示銀行轉帳資訊，並請留下匯款帳號後 5 碼。
+            </p>
+          </form>
+
+          <div class="registration-closed-message" data-registration-closed hidden>
+            <h3 data-i18n="registrationClosedTitle">報名已截止</h3>
+            <p data-i18n="registrationClosedMessage">
+              本活動報名已截止，頁面資訊仍保留供查看。
+            </p>
+          </div>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section class="notice-section" aria-labelledby="notice-title">
+        <div class="section-heading">
+          <p>NOTICE</p>
+          <h2 id="notice-title" data-i18n="noticeTitle">免責聲明與注意事項</h2>
+        </div>
+        <div class="notice-columns">
+          <ul>
+            <li data-i18n="notice1">請勿破壞場地，請勿攜帶違禁品（尖銳品, 槍, 瓦斯罐, 毒品）。</li>
+            <li data-i18n="notice2">報到時請報登記的名字，因個人因素不克參加者恕不退票。</li>
+            <li data-i18n="notice3">未滿 18 歲、孕婦，或身心不適者請勿飲酒。酒後不開車，安全有保障。</li>
+            <li data-i18n="notice4">主辦單位保留活動變更及終止之權利，如有其他未盡事宜，依主辦單位相關規定或解釋為最後依據。</li>
+            <li data-i18n="notice5">本活動將進行影像錄製；完成報名並入場即表示知悉現場影像可能用於活動紀錄及宣傳。</li>
+          </ul>
+        </div>
+        <p class="contact-line">
+          <span data-config-text="event.contact.label">CONTACT 聯繫方式:</span>
+          <a href="https://www.instagram.com/techno.bus.tw/#" target="_blank" rel="noreferrer" data-config-href="event.contact.url" data-config-text="event.contact.text">
+            techno.bus.tw
+          </a>
+        </p>
+      </section>
+
+      <section class="partners partners--footer" aria-label="合作廠商">
+        <div class="partner-logos" data-config-list="partners"></div>
+      </section>
+    </main>
+
+    <dialog class="payment-modal" id="payment-modal" aria-labelledby="payment-title">
+      <form class="payment-modal__panel" id="payment-form" method="dialog">
+        <button class="modal-close" type="button" aria-label="關閉付款視窗" data-i18n-attr="aria-label:closePayment">x</button>
+        <div class="section-heading section-heading--small">
+          <p>BANK TRANSFER</p>
+          <h2 id="payment-title" data-i18n="bankTitle">銀行轉帳資訊</h2>
+        </div>
+        <dl class="bank-transfer">
+          <div>
+            <dt data-i18n="amountLabel">金額</dt>
+            <dd data-config-text="event.price.display">$400</dd>
+          </div>
+          <div>
+            <dt data-i18n="bankLabel">銀行</dt>
+            <dd data-config-text="bank.name">中國信託商業銀行 / CTBC BANK</dd>
+          </div>
+          <div>
+            <dt>BANK CODE</dt>
+            <dd data-config-text="bank.code">822</dd>
+          </div>
+          <div>
+            <dt>ACCOUNT</dt>
+            <dd data-config-text="bank.account">108540394356</dd>
+          </div>
+        </dl>
+        <p class="payment-note" data-i18n="modalPaymentNote">
+          請先匯款並填寫以下資料 Please make the payment first then fill in the following information.
+        </p>
+        <label class="payment-last5">
+          <span data-i18n="last5Label">下方留下匯款帳號後 5 碼</span>
+          <small data-i18n="last5Help">Please enter the last 5 digits of your transfer account number below.</small>
+          <input
+            name="transferLast5"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]{5}"
+            maxlength="5"
+            placeholder="請輸入 5 位數字"
+            data-i18n-attr="placeholder:last5Placeholder"
+            required
+          />
+        </label>
+        <div class="modal-actions">
+          <button class="secondary-button" type="button" data-i18n="backButton">返回修改</button>
+          <button class="submit-button" type="submit" data-i18n="confirmPayment">確認付款並送出</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="event-config.js?v=20260828-1"></script>
+    <script src="script.js?v=20260828-1"></script>
+  </body>
+</html>
