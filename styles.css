@@ -449,6 +449,26 @@ h1 {
   padding: 0;
 }
 
+.partner-logos img[alt="NextStop Studio"] {
+  height: 72px;
+  mix-blend-mode: screen;
+}
+
+.site-footer {
+  margin-top: 22px;
+  padding: 22px 12px 4px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 .partner-placeholder {
   display: grid;
   place-items: center;
