@@ -128,6 +128,7 @@ img {
 }
 
 .hero__poster {
+  height: auto;
   box-shadow: var(--shadow);
   filter: contrast(1.04) saturate(1.08);
   transition: opacity 90ms steps(2, end), filter 180ms ease;
