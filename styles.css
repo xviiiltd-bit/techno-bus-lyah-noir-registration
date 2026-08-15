@@ -118,50 +118,76 @@ img {
   pointer-events: none;
 }
 
-.hero__media img {
+.hero__poster,
+.hero__video {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
+}
+
+.hero__poster {
   box-shadow: var(--shadow);
   filter: contrast(1.04) saturate(1.08);
+  transition: opacity 90ms steps(2, end), filter 180ms ease;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  opacity: 0;
+  background: #000;
+  filter: contrast(1.08) saturate(1.1);
+  transition: opacity 90ms steps(2, end);
+}
+
+.hero__media.is-video .hero__poster {
+  opacity: 0;
+}
+
+.hero__media.is-video .hero__video {
+  opacity: 1;
+}
+
+.hero__signal {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  z-index: 4;
+  opacity: 0;
+  color: #ff2a1a;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  pointer-events: none;
+}
+
+.hero__media.is-switching {
+  animation: hero-signal-flash 620ms steps(2, end);
+}
+
+.hero__media.is-switching .hero__signal {
+  animation: hero-signal-label 620ms steps(2, end);
+}
+
+@keyframes hero-signal-flash {
+  0%, 100% { filter: none; transform: translateX(0); }
+  12% { filter: brightness(2.4) contrast(1.7); transform: translateX(-2px); }
+  28% { filter: brightness(0.15) contrast(2); transform: translateX(3px); }
+  42% { filter: brightness(2.8) saturate(1.8); transform: translateX(-1px); }
+  64% { filter: brightness(0.5) contrast(1.6); transform: translateX(2px); }
+}
+
+@keyframes hero-signal-label {
+  0%, 100% { opacity: 0; }
+  14%, 72% { opacity: 1; }
 }
 
 .hero__content {
   padding: 18px 0;
   min-width: 0;
-}
-
-.video-showcase {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.72fr) minmax(280px, 1fr);
-  gap: clamp(28px, 5vw, 64px);
-  align-items: center;
-  padding: 56px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.video-showcase__heading {
-  align-self: start;
-  padding-top: 18px;
-}
-
-.video-showcase__frame {
-  width: min(100%, 430px);
-  justify-self: center;
-  padding: 8px;
-  border: 1px solid rgba(255, 42, 26, 0.38);
-  background: rgba(10, 0, 1, 0.96);
-  box-shadow: 0 0 42px rgba(255, 20, 12, 0.18);
-}
-
-.video-showcase video {
-  display: block;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  background: #000;
 }
 
 .language-switch {
@@ -757,20 +783,6 @@ h1 {
   .hero {
     min-height: auto;
     gap: 22px;
-  }
-
-  .video-showcase {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 38px 0;
-  }
-
-  .video-showcase__heading {
-    padding-top: 0;
-  }
-
-  .video-showcase__frame {
-    width: min(100%, 390px);
   }
 
   .hero__content {

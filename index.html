@@ -14,7 +14,7 @@
       href="assets/techno-bus-lyah-noir-red-v5-clean-portrait.jpg"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="styles.css?v=20260828-hero-loading-v1" />
+    <link rel="stylesheet" href="styles.css?v=20260828-hero-video-v1" />
   </head>
   <body>
     <main class="page-shell">
@@ -22,6 +22,7 @@
         <div class="hero__media is-loading">
           <span class="hero__loading" role="status">LOADING VISUAL...</span>
           <img
+            class="hero__poster"
             src="assets/techno-bus-lyah-noir-red-v5-clean-portrait.jpg"
             alt="TARGET: LYAH NOIR 活動主視覺"
             width="900"
@@ -32,6 +33,18 @@
             data-config-src="event.poster.src"
             data-config-text-attr="alt:event.poster.alt"
           />
+          <video
+            class="hero__video"
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="assets/techno-bus-lyah-noir-red-v5-clean-portrait.jpg"
+            aria-label="Techno Bus 活動現場影片"
+          >
+            <source src="assets/techno-bus-bunker-9x16-mobile.m4v" type="video/mp4" />
+          </video>
+          <span class="hero__signal" aria-hidden="true">SIGNAL SWITCH</span>
         </div>
 
         <div class="hero__content">
@@ -72,28 +85,6 @@
           <section class="follow-panel" aria-label="追蹤按鈕" data-config-list="followLinks"></section>
 
           <a class="hero__cta" href="#register" data-i18n="cta">立即報名</a>
-        </div>
-      </section>
-
-      <section class="video-showcase" aria-labelledby="video-title">
-        <div class="section-heading video-showcase__heading">
-          <p>ON BOARD</p>
-          <h2 id="video-title">TECHNO BUS EXPERIENCE</h2>
-        </div>
-        <div class="video-showcase__frame">
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            controls
-            preload="metadata"
-            poster="assets/techno-bus-lyah-noir-red-v5-clean-portrait.jpg"
-            aria-label="Techno Bus 活動現場影片"
-          >
-            <source src="assets/techno-bus-bunker-9x16-mobile.m4v" type="video/mp4" />
-            您的瀏覽器不支援影片播放。
-          </video>
         </div>
       </section>
 
@@ -263,6 +254,6 @@
     </dialog>
 
     <script src="event-config.js?v=20260828-hero-loading-v1"></script>
-    <script src="script.js?v=20260828-hero-loading-v1"></script>
+    <script src="script.js?v=20260828-hero-video-v1"></script>
   </body>
 </html>

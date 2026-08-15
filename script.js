@@ -18,13 +18,38 @@ const heroCta = document.querySelector(".hero__cta");
 const visitorCount = document.querySelector("#visitor-count");
 const heroMedia = document.querySelector(".hero__media");
 const heroImage = heroMedia?.querySelector("img");
+const heroVideo = heroMedia?.querySelector("video");
 let pendingPayload = null;
 let currentLanguage = localStorage.getItem("preferredLanguage") || "zh";
 let registrationCloseTimer = null;
+let heroTransitionTimer = null;
+
+function switchHeroToVideo() {
+  if (!heroMedia || !heroVideo) return;
+
+  heroMedia.classList.add("is-switching");
+  heroVideo.currentTime = 0;
+  const playPromise = heroVideo.play();
+
+  if (playPromise) {
+    playPromise.catch(() => {
+      heroVideo.controls = true;
+    });
+  }
+
+  window.setTimeout(() => heroMedia.classList.add("is-video"), 180);
+  window.setTimeout(() => heroMedia.classList.remove("is-switching"), 620);
+}
+
+function scheduleHeroVideo() {
+  if (heroTransitionTimer) return;
+  heroTransitionTimer = window.setTimeout(switchHeroToVideo, 4000);
+}
 
 function finishHeroImageLoading() {
   heroMedia?.classList.remove("is-loading");
   heroMedia?.classList.add("is-loaded");
+  scheduleHeroVideo();
 }
 
 if (heroImage?.complete && heroImage.naturalWidth > 0) {
