@@ -1,5 +1,7 @@
 const eventConfig = window.EVENT_CONFIG || {};
 const GOOGLE_SCRIPT_URL = eventConfig.googleScriptUrl || "";
+const VISITOR_COUNTER_URL =
+  "https://counterapi.com/api/techno-bus-20260828/lyah-noir-page-views";
 
 const form = document.querySelector("#registration-form");
 const paymentForm = document.querySelector("#payment-form");
@@ -13,6 +15,7 @@ const last5Input = paymentForm.querySelector("input[name='transferLast5']");
 const languageButtons = document.querySelectorAll(".language-switch__button");
 const registrationClosedMessage = document.querySelector("[data-registration-closed]");
 const heroCta = document.querySelector(".hero__cta");
+const visitorCount = document.querySelector("#visitor-count");
 let pendingPayload = null;
 let currentLanguage = localStorage.getItem("preferredLanguage") || "zh";
 let registrationCloseTimer = null;
@@ -26,7 +29,7 @@ const translations = {
     emailLabel: "Email",
     birthdayLabel: "生日",
     instagramLabel: "Instagram 帳號",
-    guestCountLabel: "參加人數",
+    visitorLabel: "網頁來客數",
     agreementLabel: "我已閱讀並同意 NOTICE 免責聲明與注意事項。",
     paymentButton: "付款",
     paymentNote: "填寫報名資料後點擊付款，系統會顯示銀行轉帳資訊，並請留下匯款帳號後 5 碼。",
@@ -63,7 +66,7 @@ const translations = {
     emailLabel: "Email",
     birthdayLabel: "Birthday",
     instagramLabel: "Instagram Account",
-    guestCountLabel: "Number of Guests",
+    visitorLabel: "PAGE VISITS",
     agreementLabel: "I have read and agree to the NOTICE disclaimer and event notes.",
     paymentButton: "Payment",
     paymentNote: "Complete the form and select Payment to view the bank transfer details, then enter the last 5 digits of your transfer account.",
@@ -108,6 +111,31 @@ function localize(value) {
     return value[currentLanguage] || value.zh || value.en || "";
   }
   return value ?? "";
+}
+
+async function updateVisitorCount() {
+  if (!visitorCount) return;
+
+  const sessionKey = "techno-bus-20260828-visitor-counted";
+  const shouldIncrement = sessionStorage.getItem(sessionKey) !== "1";
+  const url = `${VISITOR_COUNTER_URL}${shouldIncrement ? "?increment=1" : ""}`;
+
+  try {
+    const response = await fetch(url, { mode: "cors", cache: "no-store" });
+    if (!response.ok) throw new Error(`Counter request failed: ${response.status}`);
+
+    const data = await response.json();
+    const value = Number(data.value);
+    if (!Number.isFinite(value)) throw new Error("Counter response is invalid");
+
+    visitorCount.textContent = new Intl.NumberFormat(
+      currentLanguage === "zh" ? "zh-TW" : "en-US",
+    ).format(value);
+
+    if (shouldIncrement) sessionStorage.setItem(sessionKey, "1");
+  } catch (error) {
+    visitorCount.textContent = "—";
+  }
 }
 
 function translate(key) {
@@ -462,7 +490,6 @@ form.addEventListener("submit", async (event) => {
     email: String(formData.get("email") || "").trim(),
     birthday: String(formData.get("birthday") || "").trim(),
     instagram: normalizeInstagram(String(formData.get("instagram") || "")),
-    guestCount: String(formData.get("guestCount") || "1").trim(),
     submittedAt: new Date().toISOString(),
     paymentStatus: isFreeEvent() ? "FREE" : "待填後五碼",
   };
@@ -527,4 +554,5 @@ languageButtons.forEach((button) => {
 });
 
 applyLanguage(currentLanguage);
+updateVisitorCount();
 scheduleRegistrationClose();

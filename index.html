@@ -8,7 +8,7 @@
       name="description"
       content="2026/08/28 Techno Bus with Lyah Noir 錄影表演活動報名頁"
     />
-    <link rel="stylesheet" href="styles.css?v=20260828-video-v2" />
+    <link rel="stylesheet" href="styles.css?v=20260828-visits-v1" />
   </head>
   <body>
     <main class="page-shell">
@@ -50,6 +50,11 @@
               <span data-config-text="event.location.label">Location</span>
               <strong><span data-config-text="event.location.title">台北大客車停車場</span><br><span class="location-note" data-config-text="event.location.note">（付款完成會給地標）</span></strong>
             </div>
+          </div>
+
+          <div class="visitor-counter" aria-live="polite" aria-atomic="true">
+            <span data-i18n="visitorLabel">網頁來客數</span>
+            <strong id="visitor-count">—</strong>
           </div>
 
           <section class="follow-panel" aria-label="追蹤按鈕" data-config-list="followLinks"></section>
@@ -136,19 +141,6 @@
                 type="text"
                 placeholder="@username"
                 autocomplete="off"
-                required
-              />
-            </label>
-
-            <label>
-              <span data-i18n="guestCountLabel">參加人數</span>
-              <input
-                name="guestCount"
-                type="number"
-                inputmode="numeric"
-                min="1"
-                step="1"
-                value="1"
                 required
               />
             </label>
@@ -259,6 +251,6 @@
     </dialog>
 
     <script src="event-config.js?v=20260828-7"></script>
-    <script src="script.js?v=20260828-2"></script>
+    <script src="script.js?v=20260828-visits-v1"></script>
   </body>
 </html>

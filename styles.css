@@ -969,6 +969,32 @@ h1 {
   font-size: 1rem;
 }
 
+.visitor-counter {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 22px;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 42, 26, 0.45);
+  background: rgba(2, 10, 16, 0.82);
+  box-shadow: 0 0 24px rgba(255, 42, 26, 0.1), inset 0 0 20px rgba(255, 42, 26, 0.04);
+}
+
+.visitor-counter span {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.visitor-counter strong {
+  color: var(--acid);
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 14px rgba(255, 42, 26, 0.6);
+}
+
 .follow-panel {
   margin: 0 0 16px;
 }
