@@ -26,6 +26,7 @@ const translations = {
     emailLabel: "Email",
     birthdayLabel: "生日",
     instagramLabel: "Instagram 帳號",
+    guestCountLabel: "參加人數",
     agreementLabel: "我已閱讀並同意 NOTICE 免責聲明與注意事項。",
     paymentButton: "付款",
     paymentNote: "填寫報名資料後點擊付款，系統會顯示銀行轉帳資訊，並請留下匯款帳號後 5 碼。",
@@ -62,6 +63,7 @@ const translations = {
     emailLabel: "Email",
     birthdayLabel: "Birthday",
     instagramLabel: "Instagram Account",
+    guestCountLabel: "Number of Guests",
     agreementLabel: "I have read and agree to the NOTICE disclaimer and event notes.",
     paymentButton: "Payment",
     paymentNote: "Complete the form and select Payment to view the bank transfer details, then enter the last 5 digits of your transfer account.",
@@ -460,6 +462,7 @@ form.addEventListener("submit", async (event) => {
     email: String(formData.get("email") || "").trim(),
     birthday: String(formData.get("birthday") || "").trim(),
     instagram: normalizeInstagram(String(formData.get("instagram") || "")),
+    guestCount: String(formData.get("guestCount") || "1").trim(),
     submittedAt: new Date().toISOString(),
     paymentStatus: isFreeEvent() ? "FREE" : "待填後五碼",
   };
