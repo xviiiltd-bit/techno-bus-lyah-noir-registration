@@ -26,6 +26,7 @@ let heroTransitionTimer = null;
 
 function switchHeroToVideo() {
   if (!heroMedia || !heroVideo) return;
+  heroTransitionTimer = null;
 
   heroMedia.classList.add("is-switching");
   heroVideo.currentTime = 0;
@@ -37,7 +38,24 @@ function switchHeroToVideo() {
     });
   }
 
-  window.setTimeout(() => heroMedia.classList.add("is-video"), 180);
+  window.setTimeout(() => {
+    heroMedia.classList.add("is-video");
+    heroTransitionTimer = window.setTimeout(switchHeroToPoster, 4000);
+  }, 180);
+  window.setTimeout(() => heroMedia.classList.remove("is-switching"), 620);
+}
+
+function switchHeroToPoster() {
+  if (!heroMedia || !heroVideo) return;
+  heroTransitionTimer = null;
+
+  heroMedia.classList.add("is-switching");
+  window.setTimeout(() => {
+    heroMedia.classList.remove("is-video");
+    heroVideo.pause();
+    heroVideo.currentTime = 0;
+    heroTransitionTimer = window.setTimeout(switchHeroToVideo, 4000);
+  }, 180);
   window.setTimeout(() => heroMedia.classList.remove("is-switching"), 620);
 }
 
