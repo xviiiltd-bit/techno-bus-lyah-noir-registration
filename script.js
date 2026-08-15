@@ -40,7 +40,7 @@ function switchHeroToVideo() {
 
   window.setTimeout(() => {
     heroMedia.classList.add("is-video");
-    heroTransitionTimer = window.setTimeout(switchHeroToPoster, 4000);
+    heroTransitionTimer = window.setTimeout(switchHeroToPoster, 7000);
   }, 180);
   window.setTimeout(() => heroMedia.classList.remove("is-switching"), 620);
 }
