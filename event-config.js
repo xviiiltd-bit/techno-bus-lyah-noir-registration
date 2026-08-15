@@ -3,16 +3,16 @@ window.EVENT_CONFIG = {
   // lists techno-bus-20260828:registration in the task whitelist.
   googleScriptUrl: "",
   theme: {
-    bg: "#02060a",
-    panel: "rgba(2, 12, 20, 0.92)",
-    panelStrong: "rgba(1, 8, 14, 0.98)",
-    text: "#eaf9ff",
-    muted: "#6fc9ee",
-    accent: "#00c8ff",
-    accentSoft: "rgba(0, 200, 255, 0.16)",
-    line: "rgba(0, 200, 255, 0.46)",
+    bg: "#050000",
+    panel: "rgba(18, 2, 3, 0.92)",
+    panelStrong: "rgba(10, 0, 1, 0.98)",
+    text: "#fff2ee",
+    muted: "#ff7566",
+    accent: "#ff2a1a",
+    accentSoft: "rgba(255, 42, 26, 0.16)",
+    line: "rgba(255, 42, 26, 0.48)",
     danger: "#ff5b78",
-    buttonText: "#00131c",
+    buttonText: "#170000",
   },
   event: {
     title: {
@@ -27,7 +27,7 @@ window.EVENT_CONFIG = {
     pageTitle: "TARGET: LYAH NOIR | TECHNO BUS",
     description: "2026/08/28 Techno Bus with Lyah Noir 錄影表演活動報名頁",
     poster: {
-      src: "assets/techno-bus-lyah-noir-20260828-v3.png",
+      src: "assets/techno-bus-lyah-noir-red-v5-clean-portrait.png",
       alt: {
         zh: "TARGET: LYAH NOIR 活動主視覺",
         en: "TARGET: LYAH NOIR event poster",
@@ -62,21 +62,24 @@ window.EVENT_CONFIG = {
   },
   followLinks: [
     {
-      group: "IG",
+      group: "link",
       links: [
-        { label: "techno.bus.tw", url: "https://www.instagram.com/techno.bus.tw/" },
-        { label: "Event Post", url: "https://www.instagram.com/p/DW4UHbODfhs/?img_index=1" },
+        { label: "Techno.bus.tw", url: "https://www.instagram.com/techno.bus.tw/" },
+        { label: "NEXT STOP STUDIO", url: "https://www.instagram.com/nextstopstudio_tw/" },
+        { label: "LYAH NOIR YT", url: "https://www.youtube.com/@lyahnoir" },
+        { label: "NEXT STOP YT", url: "https://www.youtube.com/@nextstopstudio_tw" },
       ],
     },
   ],
   lineup: [
-    { time: "22:00-23:00", name: "VG", instagram: "https://www.instagram.com/vg_virgillin/" },
-    { time: "23:00-01:00", name: "LYAH NOIR", instagram: "https://www.instagram.com/lyahnoir/" },
+    { time: "22:00-23:30", name: "VG", instagram: "https://www.instagram.com/vg_virgillin/" },
+    { time: "23:30-01:00", name: "LYAH NOIR", instagram: "https://www.instagram.com/lyahnoir/" },
     { time: "01:00-02:00", name: "JOJI", instagram: "https://www.instagram.com/j0ji_chan/" },
   ],
   partners: [
     { name: "Techno Bus TW", logo: "assets/techno-bus-logo.png" },
     { name: "NextStop Studio", logo: "assets/next-stop-logo.jpg" },
+    { name: "HENDUO MUSIC", logo: "assets/henduo-music-logo.png" },
   ],
   bank: {
     name: "中國信託商業銀行 / CTBC BANK",
