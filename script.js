@@ -16,9 +16,23 @@ const languageButtons = document.querySelectorAll(".language-switch__button");
 const registrationClosedMessage = document.querySelector("[data-registration-closed]");
 const heroCta = document.querySelector(".hero__cta");
 const visitorCount = document.querySelector("#visitor-count");
+const heroMedia = document.querySelector(".hero__media");
+const heroImage = heroMedia?.querySelector("img");
 let pendingPayload = null;
 let currentLanguage = localStorage.getItem("preferredLanguage") || "zh";
 let registrationCloseTimer = null;
+
+function finishHeroImageLoading() {
+  heroMedia?.classList.remove("is-loading");
+  heroMedia?.classList.add("is-loaded");
+}
+
+if (heroImage?.complete && heroImage.naturalWidth > 0) {
+  finishHeroImageLoading();
+} else {
+  heroImage?.addEventListener("load", finishHeroImageLoading, { once: true });
+  heroImage?.addEventListener("error", finishHeroImageLoading, { once: true });
+}
 
 const translations = {
   zh: {

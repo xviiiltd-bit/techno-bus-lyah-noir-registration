@@ -8,15 +8,27 @@
       name="description"
       content="2026/08/28 Techno Bus with Lyah Noir 錄影表演活動報名頁"
     />
-    <link rel="stylesheet" href="styles.css?v=20260828-visits-v3" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/techno-bus-lyah-noir-red-v5-clean-portrait.jpg"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260828-hero-loading-v1" />
   </head>
   <body>
     <main class="page-shell">
       <section class="hero" aria-labelledby="event-title">
-        <div class="hero__media">
+        <div class="hero__media is-loading">
+          <span class="hero__loading" role="status">LOADING VISUAL...</span>
           <img
-            src="assets/techno-bus-lyah-noir-red-v5-clean-portrait.png"
+            src="assets/techno-bus-lyah-noir-red-v5-clean-portrait.jpg"
             alt="TARGET: LYAH NOIR 活動主視覺"
+            width="900"
+            height="1125"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
             data-config-src="event.poster.src"
             data-config-text-attr="alt:event.poster.alt"
           />
@@ -76,7 +88,7 @@
             playsinline
             controls
             preload="metadata"
-            poster="assets/techno-bus-lyah-noir-red-v5-clean-portrait.png"
+            poster="assets/techno-bus-lyah-noir-red-v5-clean-portrait.jpg"
             aria-label="Techno Bus 活動現場影片"
           >
             <source src="assets/techno-bus-bunker-9x16-mobile.m4v" type="video/mp4" />
@@ -250,7 +262,7 @@
       </form>
     </dialog>
 
-    <script src="event-config.js?v=20260828-7"></script>
-    <script src="script.js?v=20260828-visits-v1"></script>
+    <script src="event-config.js?v=20260828-hero-loading-v1"></script>
+    <script src="script.js?v=20260828-hero-loading-v1"></script>
   </body>
 </html>
