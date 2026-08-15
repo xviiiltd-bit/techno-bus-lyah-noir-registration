@@ -19,6 +19,7 @@ window.EVENT_CONFIG = {
       zh: "TARGET: LYAH NOIR",
       en: "TARGET: LYAH NOIR",
     },
+    eyebrow: "TECHNO BUS ｜",
     nameForSheet: "2026/08/28 TARGET: TECHNO BUS — LYAH NOIR",
     eventId: "techno-bus-20260828",
     taskId: "registration",
