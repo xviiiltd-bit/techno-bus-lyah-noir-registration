@@ -27,7 +27,7 @@ window.EVENT_CONFIG = {
     pageTitle: "TARGET: LYAH NOIR | TECHNO BUS",
     description: "2026/08/28 Techno Bus with Lyah Noir 錄影表演活動報名頁",
     poster: {
-      src: "assets/techno-bus-lyah-noir-20260828-v2.png",
+      src: "assets/techno-bus-lyah-noir-20260828-v3.png",
       alt: {
         zh: "TARGET: LYAH NOIR 活動主視覺",
         en: "TARGET: LYAH NOIR event poster",
