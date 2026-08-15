@@ -1016,15 +1016,21 @@ h1 {
 }
 
 .visitor-counter {
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(10px, env(safe-area-inset-bottom));
+  z-index: 30;
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
   gap: 9px;
   width: fit-content;
-  margin: -8px 0 16px auto;
-  padding: 5px 8px;
+  margin: 0;
+  padding: 6px 9px;
   border-right: 1px solid rgba(255, 42, 26, 0.48);
-  background: transparent;
+  background: rgba(2, 4, 7, 0.78);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
 }
 
 .visitor-counter span {
