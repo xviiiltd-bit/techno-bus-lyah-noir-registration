@@ -1,7 +1,5 @@
 window.EVENT_CONFIG = {
-  // Add the newly deployed protected Apps Script URL after its GET response
-  // lists techno-bus-20260828:registration in the task whitelist.
-  googleScriptUrl: "",
+  googleScriptUrl: "https://script.google.com/macros/s/AKfycbyRYtqtC2hAGRpwgaVP7l_CfWczCVArTXYLJaH8YYkZZ33HkzJ6EUm0elhOLPHY6cOJpw/exec",
   theme: {
     bg: "#050000",
     panel: "rgba(18, 2, 3, 0.92)",
