@@ -70,8 +70,9 @@ window.EVENT_CONFIG = {
     },
   ],
   lineup: [
-    { time: "22:00-23:30", name: "VG", instagram: "https://www.instagram.com/vg_virgillin/" },
-    { time: "23:30-01:00", name: "LYAH NOIR", instagram: "https://www.instagram.com/lyahnoir/" },
+    { time: "22:00-23:00", name: "VG", instagram: "https://www.instagram.com/vg_virgillin/" },
+    { time: "23:00-00:00", name: "DJ PEIPEI", instagram: "https://www.instagram.com/djpeipei212/" },
+    { time: "00:00-01:00", name: "LYAH NOIR (DE)", instagram: "https://www.instagram.com/lyahnoir/" },
     { time: "01:00-02:00", name: "JOJI", instagram: "https://www.instagram.com/j0ji_chan/" },
   ],
   partners: [
