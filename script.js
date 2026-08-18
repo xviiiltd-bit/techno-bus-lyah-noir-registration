@@ -16,6 +16,7 @@ const languageButtons = document.querySelectorAll(".language-switch__button");
 const registrationClosedMessage = document.querySelector("[data-registration-closed]");
 const heroCta = document.querySelector(".hero__cta");
 const visitorCount = document.querySelector("#visitor-count");
+const SHEET_SUBMIT_TIMEOUT_MS = 8000;
 const heroMedia = document.querySelector(".hero__media");
 const heroImage = heroMedia?.querySelector("img");
 const heroVideo = heroMedia?.querySelector("video");
@@ -478,16 +479,30 @@ async function submitToGoogleSheet(payload) {
     };
   }
 
-  const response = await fetch(GOOGLE_SCRIPT_URL, {
+  const request = fetch(GOOGLE_SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
     headers: {
       "Content-Type": "text/plain;charset=utf-8",
     },
     body: JSON.stringify(payload),
-  });
+  }).then((response) => ({ response })).catch((error) => ({ error }));
 
-  return { skipped: false, response };
+  const result = await Promise.race([
+    request,
+    new Promise((resolve) => {
+      window.setTimeout(() => resolve({ timedOut: true }), SHEET_SUBMIT_TIMEOUT_MS);
+    }),
+  ]);
+
+  if (result.error) {
+    throw result.error;
+  }
+
+  return {
+    skipped: false,
+    ...result,
+  };
 }
 
 function getEventMeta() {
